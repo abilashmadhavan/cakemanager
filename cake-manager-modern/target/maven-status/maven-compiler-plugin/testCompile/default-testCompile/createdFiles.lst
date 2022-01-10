@@ -1,0 +1,6 @@
+com\waracle\cakemanager\repository\CakeRepositoryTest.class
+com\waracle\cakemanager\request\model\CakeRequestTest.class
+com\waracle\cakemanager\service\CakeServiceImplTest.class
+com\waracle\cakemanager\CakeManagerModernApplicationTests.class
+com\waracle\cakemanager\controller\CakeApiControllerTest.class
+com\waracle\cakemanager\mapper\CakeMapperTest.class

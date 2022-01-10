@@ -1,0 +1,39 @@
+server:
+ port: 8082
+ servlet:
+   context-path: /
+
+spring:
+  application:
+    name: cake-manager
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+         jdbc:
+           lob:
+             non_contextual_creation: true
+  security:
+     oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8083/auth/realms/baeldung
+          jwk-set-uri: http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/certs
+
+springdoc:
+  swagger-ui:
+    oauth:
+      clientId: newClient
+      clientSecret: newClientSecret
+   
+  oAuthFlow:
+    authorizationUrl: http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/auth
+    tokenUrl: http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/token
+    use-pkce-with-authorization-code-grant: true
